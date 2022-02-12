@@ -10,10 +10,15 @@ import random
 
 #get screen size x and y coordinates
 screenx,screeny =turtle.screensize()
+screen = Screen()
+
+# Setting the screen color-mode
+screen.colormode(255)
 
 timmy_the_turtle = Turtle()
 #color list for dots
-color_list = ['red','blue','green','pink','violet','cyan']
+color_list = [(202, 164, 109), (238, 240, 245), (150, 75, 49), (223, 201, 135), (52, 93, 124), (172, 154, 40), (140, 30, 19), (133, 163, 185), (198, 91, 71), (46, 122, 86), (72, 43, 35), (145, 178, 148), (13, 99, 71), (233, 175, 164), (161, 142, 158), (105, 74, 77), (55, 46, 50), (183, 205, 171), (36, 60, 74), (81, 148, 129), (148, 17, 20), (14, 70, 64), (30, 68, 100), (107, 127, 153), (174, 94, 97), (176, 192, 209)]
+
 timmy_the_turtle.shape("turtle")
 timmy_the_turtle.hideturtle()
 timmy_the_turtle.penup()
@@ -61,6 +66,7 @@ while ypos!=screeny - 10 :
 
 
 screen = Screen()
+screen.colormode(255)
 
 screen.onscreenclick(buttonclick,1)
 screen.listen() 
