@@ -13,10 +13,12 @@ Created on Mon Mar 14 15:19:46 2022
 """
 
 import requests
-
+from twilio.http.http_client import TwilioHttpClient
 from twilio.rest import Client
+import os
 
-Api_Key = "2337b8189b7aac62bc3451453142b965"
+#openweather API Key(Stored in environment vairble.)
+Api_Key = os.environ.get("WOM_Api_Key")
 
 response = requests.get(url= "http://api.openweathermap.org/data/2.5/onecall?lat=18&lon=73&exclude=current,minutely,daily&appid=" + Api_Key)
 response.raise_for_status()
@@ -35,12 +37,12 @@ for i,j in zip(weather_data['hourly'],timewise_weather.keys()):
         rain_time[j] = "Rain"
     elif (ID.startswith('8')):
         clear_time[j] = "Clear"
-        
+
 Message = ""
 
 if (rain_time == {}):
     Message = "Don't Worry the weather is clear thorughout day! "
-    
+
 else:
     Message = "There is going to be rain at "
     for key in rain_time:
@@ -49,13 +51,19 @@ else:
 Message = Message.rstrip(",")
 
 #sending message
-account_sid = 'ACa0c42781c8e3d2474fdc7a234689bb39' 
-auth_token = '1c3545dd0f6877ab244f8cb34c694518' 
-client = Client(account_sid, auth_token) 
- 
-message = client.messages.create(  
-                              messaging_service_sid='MG0076ddafb32bc492066a96d7e2e957ac',   
+
+#Twilio Account_sid
+account_sid = os.environ.get("Tw_SID")
+#Twlio Auth Token
+auth_token = os.environ.get("Tw_Auth")
+#Your phone number
+phn_no = os.environ.get("phn_no")
+proxy_client = TwilioHttpClient()
+proxy_client.session.proxies = {'https': os.environ['https_proxy']}
+client = Client(account_sid, auth_token,http_client=proxy_client)
+message = client.messages.create(
+                              messaging_service_sid='MG0076ddafb32bc492066a96d7e2e957ac',
                               body = Message,
-                              to='+919158695603' 
-                          ) 
- 
+                              to=phn_no
+                          )
+
