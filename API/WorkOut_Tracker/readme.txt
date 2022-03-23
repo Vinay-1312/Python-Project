@@ -1,0 +1,3 @@
+This is a workout tracker, which asks user about "what kind of activity he/she has done during the day". Based on the input, the program updates a google sheet. In the google sheet there are 5 fields(Date, Time, Exercise name, Duration of exercise, Calories burned) which are updated with necessary value.
+
+The program uses sheety API to update the google sheet and nutritionix API to fetch exercise related details. The nutritionix API uses Natural language processing at the back end.Therefore, almost any text can be processed with better accuracy.
