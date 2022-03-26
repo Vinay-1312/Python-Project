@@ -1,4 +1,4 @@
-This program performs following operations:
+This project performs following operations:
 	1)Accept a date from user.
 	2)Accept a playlist name from user.
 	3)From billboard site using webscrapping, fetch list of trending songs of the entered date 
