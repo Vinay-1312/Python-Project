@@ -1,0 +1,1 @@
+In this project, with the help selenium, python jobs are saved in LikedIn. The program automatically logs into the LinkedIn and then visits all the availble python jobs one by one and then it saves them.
