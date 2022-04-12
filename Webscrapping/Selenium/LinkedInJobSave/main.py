@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 import os
-Chrom_driver_path = "F:\Vinay\Python Projects\chromedriver.exe"
+Chrom_driver_path = "F:\Vinay\chromedriver.exe"
 driver = webdriver.Chrome(Chrom_driver_path)
 #driver.get("https://www.amazon.com/dp/B0956KYCPS/ref=sspa_dk_detail_0?pd_rd_i=B0956KYCPS&pd_rd_w=Z4r5i&pf_rd_p=b9951ce4-3bd8-4b04-9123-0fda35d6155e&pd_rd_wg=TEHVu&pf_rd_r=YXBKPZGSKKYDAFMP7RDC&pd_rd_r=69da9803-689d-4484-a29d-58fbc64ceb7c&s=kitchen&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFSSUhCV1A2T0VJRUgmZW5jcnlwdGVkSWQ9QTEwMjY5NjExOTRYWUtBSVZFMFpSJmVuY3J5cHRlZEFkSWQ9QTAwMjY0NTMyWDJJQThNWURKOUU2JndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1")
 
